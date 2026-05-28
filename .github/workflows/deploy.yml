@@ -16,8 +16,8 @@ jobs:
     - name: Sync files to Hostinger
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: ${{ FTP_SERVER }}
-        username: ${{ FTP_USERNAME }}
-        password: ${{ FTP_PASSWORD }}
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/
         server-dir: ./public_html/
