@@ -1,0 +1,30 @@
+/* ===========================================================
+   Reset Global de Estilos
+   -----------------------------------------------------------
+   Cada navegador (Chrome, Firefox, Safari, etc.) tem seus
+   próprios estilos padrão para os elementos HTML — margens,
+   espaçamentos e tamanhos diferentes.
+
+   O "reset" remove essas diferenças, garantindo que o site
+   tenha a mesma aparência em todos os navegadores.
+   =========================================================== */
+
+/* Remove margens e espaçamentos internos de TODOS os elementos.
+   O "box-sizing: border-box" faz com que bordas e padding
+   sejam contados dentro do tamanho total do elemento,
+   facilitando muito o cálculo de larguras. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Indicador visual de foco para navegação via teclado.
+   Quando alguém navega pelo site usando a tecla Tab (sem mouse),
+   este contorno roxo aparece ao redor do elemento selecionado,
+   ajudando pessoas com necessidades de acessibilidade. */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+}

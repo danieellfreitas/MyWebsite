@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Daniel Tecnologia - Prestador de Serviços de TI. Consultoria, Desenvolvimento de Software e Suporte Técnico.">
+    <title>Daniel Tecnologia - Serviços de TI</title>
+    <!-- Carrega o arquivo principal de estilos que importa todos os outros CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" type="image/svg+xml" href="assets/img/BrandIcon.svg">
+</head>
+
+<body>
+    <!-- ===================================================
+         Cabeçalho do Site (presente em todas as páginas)
+         Contém o logotipo e o menu de navegação principal.
+         O cabeçalho fica fixo no topo enquanto a página rola.
+         =================================================== -->
+    <header>
+        <div class="container">
+            <!-- Logotipo do site (Tema escuro padrão) -->
+            <!-- Forced dark theme logo, removed <picture> with light/dark queries -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/img/logoType.svg" alt="Daniel Tecnologia Logo" class="site-logo">
+                </a>
+            </div>
+            <!-- Menu de Navegação — links para as páginas do site.
+                 O item "Serviços" possui um submenu suspenso (dropdown)
+                 que aparece ao passar o mouse. -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li class="dropdown">
+                        <a href="pages/services.html">Serviços</a>
+                        <!-- Submenu suspenso com links para as abas da página de Serviços -->
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/services.html#gallery">Galeria de Sites</a></li>
+                            <li><a href="pages/services.html#services">Serviços de Software</a></li>
+                            <li><a href="pages/services.html#tools">Ferramentas Online</a></li>
+                            <li><a href="pages/services.html#consulting">Consultoria em TI</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pages/about.html">Sobre</a></li>
+                    <li><a href="pages/contact.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===================================================
+             Seção Hero (Banner Principal)
+             Primeira coisa que o visitante vê ao entrar no site.
+             Contém o título impactante, subtítulo descritivo e
+             dois botões de ação (orçamento e ver serviços).
+             =================================================== -->
+        <section id="home" class="hero">
+
+            <div class="container">
+                <div class="hero-content">
+                    <!-- Badge decorativo acima do título -->
+                    <span class="hero-badge">Inovação &amp; Tecnologia</span>
+                    <!-- Título principal com palavra em destaque (gradiente roxo) -->
+                    <h2 class="hero-title">Soluções de TI <span class="text-gradient">Sob Medida</span> Para Seu Negócio
+                    </h2>
+                    <p class="hero-subtitle">Transformando ideias em realidade através de tecnologia inovadora e
+                        consultoria especializada. Desenvolvemos o futuro do seu negócio hoje.</p>
+                    <!-- Botões de ação — navegação para páginas de contato e serviços -->
+                    <nav class="hero-actions" aria-label="Ações principais">
+                        <a href="pages/contact.html" class="cta-button primary-btn">Solicitar Orçamento</a>
+                        <a href="#services" class="cta-button secondary-btn">Ver Serviços</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             Seção de Serviços (Grade 2x2)
+             Exibe os 4 principais serviços em cards clicáveis
+             que levam à página de Serviços detalhada.
+             Cada card tem: ícone, título, descrição e seta.
+             =================================================== -->
+        <section id="services" class="services">
+            <div class="container">
+                <!-- Cabeçalho da seção com título e subtítulo -->
+                <header class="section-header">
+                    <h2>Nossos <span class="text-gradient">Serviços</span></h2>
+                    <p>Soluções completas e personalizadas para impulsionar sua presença digital</p>
+                </header>
+                <div class="services-grid">
+                    <!-- Card 1: Galeria de Sites -->
+                    <a href="pages/services.html#gallery" class="service-card bento-card">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"><img src="assets/img/websiteGallery.svg" alt="Galeria de Sites">
+                            </div>
+                        </div>
+                        <h3>Galeria de Sites</h3>
+                        <p>Portfólio completo de sites criados com tecnologias modernas, responsivos e otimizados para
+                            conversão e experiência do usuário.</p>
+                        <span class="learn-more">Saiba mais <span class="arrow">→</span></span>
+                    </a>
+
+                    <!-- Card 2: Serviços de Software -->
+                    <a href="pages/services.html#services" class="service-card bento-card">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"><img src="assets/img/services.svg" alt="Serviços"></div>
+                        </div>
+                        <h3>Serviços</h3>
+                        <p>Softwares e soluções personalizadas tanto de desenvolvimento próprio quanto em parceria com
+                            especialistas.</p>
+                        <span class="learn-more">Saiba mais <span class="arrow">→</span></span>
+                    </a>
+
+                    <!-- Card 3: Ferramentas Online -->
+                    <a href="pages/services.html#tools" class="service-card bento-card">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"><img src="assets/img/tools.svg" alt="Ferramentas"></div>
+                        </div>
+                        <h3>Ferramentas</h3>
+                        <p>Conversores, geradores e utilitários online para facilitar suas tarefas do dia a dia.</p>
+                        <span class="learn-more">Saiba mais <span class="arrow">→</span></span>
+                    </a>
+
+                    <!-- Card 4: Consultoria e Suporte -->
+                    <a href="pages/services.html#consulting" class="service-card bento-card">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"><img src="assets/img/support.svg" alt="Suporte"></div>
+                        </div>
+                        <h3>Consultoria e Suporte de TI</h3>
+                        <p>Disponível para resolver problemas e manter seus sistemas funcionando de forma otimizada.
+                            Oferecemos planos de suporte flexíveis, desde atendimento sob demanda até suporte 24/7.</p>
+                        <span class="learn-more">Saiba mais <span class="arrow">→</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             Seção "Quem Sou Eu" (Resumo Sobre Mim)
+             Versão compacta do perfil profissional com foto,
+             nome, breve descrição e link para a página completa.
+             =================================================== -->
+        <section id="about" class="about-summary">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Quem <span class="text-gradient">Sou Eu</span></h2>
+                    <p>Um pouco sobre minha trajetória e experiência</p>
+                </header>
+                <!-- Layout lado a lado: foto à esquerda, texto à direita -->
+                <div class="about-summary-wrapper">
+                    <img src="assets/img/BrandIcon.svg" alt="Foto de perfil" class="about-summary-photo">
+                    <div class="about-summary-info">
+                        <h3>Daniel <span class="text-gradient">Freitas</span></h3>
+                        <p>Consultor de TI com mais de 5 anos de experiência. Transformo ideias em soluções digitais
+                            completas, com foco em qualidade, performance e experiência do usuário.</p>
+                        <!-- Link que leva à página completa "Sobre Mim" -->
+                        <a href="pages/about.html" class="about-summary-link">Saiba mais sobre mim <span
+                                class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             Seção de Depoimentos (Avaliações do Google)
+             Espaço reservado para integrar o widget de avaliações
+             do Google. Atualmente mostra um placeholder.
+             =================================================== -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <header class="section-header">
+                    <h2>O Que Nossos <span class="text-gradient">Clientes</span> Dizem</h2>
+                    <p>Avaliações reais de quem confiou no nosso trabalho</p>
+                </header>
+
+                <!-- Container onde o widget de avaliações do Google será inserido -->
+                <div id="google-reviews-container">
+                    <script defer async src='https://cdn.trustindex.io/loader.js?e02b633729769188d0366ddedb9'></script>
+                </div>
+
+                <!-- Botão para ver mais avaliações diretamente no Google -->
+                <div class="reviews-action">
+                    <a href="https://www.google.com/maps/place/Daniel+%E2%80%93+Consultor+de+Tecnologia+%7C+Goi%C3%A2nia+e+Atendimento+Remoto/@-16.7112805,-49.4696416,11z/data=!3m1!4b1!4m6!3m5!1s0x452094eae909a7c1:0xc677b6359a8958e6!8m2!3d-16.7113458!4d-49.3048327!16s%2Fg%2F11ltjbyxy7?authuser=0&entry=ttu&g_ep=EgoyMDI2MDUyNS4wIKXMDSoASAFQAw%3D%3D"
+                        class="cta-button primary-btn" target="_blank">
+                        Ver Mais Avaliações no Google
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================================================
+         Rodapé do Site (presente em todas as páginas)
+         Contém informações institucionais, dados de contato
+         e links para as redes sociais.
+         =================================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Coluna 1: Informações da empresa -->
+                <section class="footer-section">
+                    <h4>Daniel Tecnologia</h4>
+                    <p>Prestador de Serviços de TI com foco em qualidade e inovação.</p>
+                </section>
+                <!-- Coluna 2: Dados de contato -->
+                <section class="footer-section">
+                    <h4>Contato</h4>
+                    <p>Email: contato@danieellfreitas.com</p>
+                    <p>Telefone: 62 99678-5384</p>
+                    <p>CNPJ: 66.848.716/0001-51</p>
+                </section>
+                <!-- Coluna 3: Ícones de redes sociais -->
+                <section class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <nav class="social-icons" aria-label="Redes Sociais">
+                        <a href="https://www.instagram.com/danieellfreitas/" aria-label="Instagram" class="social-icon"
+                            target="_blank" rel="noopener noreferrer"><img src="assets/img/instagram.svg" alt=""
+                                class="icon-img"></a>
+                        <a href="https://wa.me/5562996785384?text=Ol%C3%A1%2C%20vim%20do%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20servi%C3%A7o"
+                            aria-label="WhatsApp" class="social-icon" target="_blank" rel="noopener noreferrer"><img
+                                src="assets/img/whatsapp.svg" alt="" class="icon-img"></a>
+                        <a href="https://www.linkedin.com/in/danieellfreitas/" aria-label="LinkedIn" class="social-icon"
+                            target="_blank" rel="noopener noreferrer"><img src="assets/img/linkedin.svg" alt=""
+                                class="icon-img"></a>
+                        <a href="https://github.com/danieellfreitas" aria-label="GitHub" class="social-icon"
+                            target="_blank" rel="noopener noreferrer"><img src="assets/img/github.svg" alt=""
+                                class="icon-img"></a>
+                        <a href="#" aria-label="X (Twitter)" class="social-icon"><img src="assets/img/x.svg" alt=""
+                                class="icon-img"></a>
+                    </nav>
+                </section>
+            </div>
+            <!-- Linha de copyright no final da página -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Daniel Tecnologia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

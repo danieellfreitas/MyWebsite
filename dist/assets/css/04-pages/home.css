@@ -1,0 +1,119 @@
+﻿
+
+.hero {
+    position: relative;
+    padding: 8rem 2rem 6rem;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    background: transparent;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--bento-radius);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.services {
+    padding: 5rem 2rem;
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid var(--color-border);
+}
+
+.services .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--bento-gap);
+}
+
+.testimonials {
+    padding: 5rem 2rem;
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid var(--color-border);
+}
+
+#google-reviews-container {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--bento-radius);
+    padding: 2rem;
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+.reviews-action {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .services .services-grid {
+        grid-template-columns: 1fr;
+    }
+}

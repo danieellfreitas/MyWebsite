@@ -1,0 +1,188 @@
+/* ===========================================================
+   Botões do Site
+   -----------------------------------------------------------
+   Todos os estilos de botões usados no site ficam aqui.
+   Existem vários tipos: botão principal (roxo), secundário
+   (contorno), botões de navegação de abas e botões de filtro.
+   =========================================================== */
+
+/* Estilo base de todos os botões "Call to Action" (chamada para ação).
+   Esses são os botões grandes que convidam o visitante a fazer algo,
+   como "Solicitar Orçamento" ou "Ver Serviços". */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: var(--bento-radius);
+    cursor: pointer;
+    transition: all var(--transition-default);
+    text-decoration: none;
+    border: none;
+}
+
+/* Botão Primário — o mais importante da página.
+   Fundo com gradiente roxo que chama bastante atenção. */
+.primary-btn {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #fff;
+}
+
+/* Ao passar o mouse, o gradiente inverte a direção
+   e o botão sobe levemente criando efeito de "flutuar" */
+.primary-btn:hover {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+    transform: translateY(-2px);
+}
+
+/* Botão Secundário — menos destaque que o primário.
+   Fundo escuro com borda sutil, para ações alternativas. */
+.secondary-btn {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+/* Ao passar o mouse, o fundo e a borda ficam um pouco mais claros */
+.secondary-btn:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-border-hover);
+}
+
+/* ===========================================================
+   Botões de Navegação entre Abas (Página de Serviços)
+   -----------------------------------------------------------
+   Esses botões ficam no topo da página de Serviços e permitem
+   alternar entre as seções: Galeria, Serviços, Ferramentas
+   e Consultoria. Cada botão tem um ícone à esquerda.
+   =========================================================== */
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-surface);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--bento-radius);
+    cursor: pointer;
+    transition: all var(--transition-default);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Ícone SVG dentro do botão de navegação */
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    transition: filter var(--transition-default);
+}
+
+/* Ao passar o mouse, o botão fica um pouco mais claro */
+.nav-btn:hover {
+    border-color: var(--color-border-hover);
+    color: var(--color-text);
+    background-color: var(--color-surface-hover);
+}
+
+/* Ao passar o mouse ou quando ativo, o ícone ganha contraste branco */
+.nav-btn:hover .nav-icon,
+.nav-btn.active .nav-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* Botão de navegação ativo (aba selecionada) — fica roxo
+   para indicar claramente qual seção está sendo exibida */
+.nav-btn.active {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
+
+/* ===========================================================
+   Botões de Filtro (Página de Serviços — aba "Serviços")
+   -----------------------------------------------------------
+   Filtram os cards de serviço por categoria: "Todos",
+   "Próprios" ou "Parceiros". Funcionam de forma similar
+   aos botões de navegação, mas são menores.
+   =========================================================== */
+
+.filter-btn {
+    background-color: var(--color-surface);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--bento-radius);
+    cursor: pointer;
+    transition: all var(--transition-default);
+    font-weight: 600;
+}
+
+/* Ao passar o mouse, a borda fica roxa */
+.filter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+/* Filtro ativo — fundo roxo, texto branco */
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* ===========================================================
+   Indicador "Saiba Mais" (dentro dos cards)
+   -----------------------------------------------------------
+   Texto com seta que aparece na parte inferior dos cards
+   de serviço na página inicial, indicando que o card é
+   clicável e leva a mais informações.
+   =========================================================== */
+
+.learn-more {
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+/* Seta ao lado do "Saiba mais" — se move para a direita
+   quando o card é hover (animação definida em cards.css) */
+.learn-more .arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* ===========================================================
+   Ícone dentro de Botões de Contato
+   -----------------------------------------------------------
+   Ícones SVG que aparecem ao lado do texto nos botões de
+   contato (ex: ícone de e-mail, ícone do WhatsApp).
+   =========================================================== */
+
+.btn-icon-img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* ===========================================================
+   Responsivo — Botões (telas menores que 768px)
+   -----------------------------------------------------------
+   Em telas pequenas (celulares), os botões de filtro ficam
+   empilhados verticalmente e ocupam toda a largura.
+   =========================================================== */
+
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+}

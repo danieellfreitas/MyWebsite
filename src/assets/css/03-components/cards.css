@@ -1,0 +1,499 @@
+/* ===========================================================
+   Cards — Bento Card (Página Inicial)
+   -----------------------------------------------------------
+   "Bento Cards" são os blocos retangulares usados na página
+   inicial para mostrar os serviços (Galeria de Sites,
+   Serviços, Ferramentas, Consultoria). O nome vem do
+   "Bento Grid" — um layout inspirado nas marmitas japonesas,
+   onde cada compartimento tem tamanho próprio.
+
+   Cada card é um link clicável que leva à página de Serviços.
+   =========================================================== */
+
+/* Estilo base do Bento Card — fundo elevado, borda sutil,
+   cantos arredondados. O "display: flex + column" empilha
+   o conteúdo verticalmente (ícone → título → texto → seta). */
+.bento-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 2.5rem;
+    border-radius: var(--bento-radius);
+    text-align: left;
+    transition: all var(--transition-default);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+/* Ao passar o mouse, o card sobe 4px e fica mais claro,
+   criando um efeito visual de "elevação" */
+.bento-card:hover {
+    border-color: var(--color-border-hover);
+    transform: translateY(-4px);
+    background: var(--color-surface-hover);
+}
+
+/* Container do ícone do serviço — caixa quadrada de 60x60px
+   com fundo levemente mais claro que o card */
+.service-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: var(--color-surface-hover);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all var(--transition-default);
+}
+
+/* Tamanho do ícone dentro do wrapper */
+.service-icon {
+    font-size: 2rem;
+}
+
+/* Ícones SVG dentro dos cards de serviço */
+.service-icon img {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+/* Ao passar o mouse no card, o fundo do ícone ganha tom roxo
+   semitransparente, dando destaque visual */
+.bento-card:hover .service-icon-wrapper {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Ao passar o mouse no card, a seta do "Saiba mais" se move
+   5px para a direita, indicando ação */
+.bento-card:hover .learn-more .arrow {
+    transform: translateX(5px);
+}
+
+/* Título do card de serviço */
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+/* Descrição do card de serviço — cor mais suave para
+   não competir visualmente com o título. O "flex-grow: 1"
+   faz o texto expandir e empurrar o "Saiba mais" para baixo. */
+.service-card p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* ===========================================================
+   Cards — Portfólio (Galeria de Sites)
+   -----------------------------------------------------------
+   Cards que exibem os projetos web no portfólio.
+   Cada card tem uma área de imagem no topo, título,
+   descrição e um botão "Visitar Site".
+   =========================================================== */
+
+/* Grade do portfólio — ajusta automaticamente o número
+   de colunas conforme o espaço disponível na tela */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--bento-gap);
+    margin-top: 2rem;
+}
+
+/* Card individual do portfólio */
+.portfolio-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--bento-radius);
+    overflow: hidden;
+    transition: all var(--transition-default);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ao passar o mouse, o card sobe levemente */
+.portfolio-item:hover {
+    border-color: var(--color-border-hover);
+    transform: translateY(-4px);
+}
+
+/* Área de imagem/preview do projeto — fundo gradiente roxo
+   com emoji centralizado como placeholder */
+.portfolio-image {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+/* Título do projeto no card */
+.portfolio-item h3 {
+    color: var(--color-text);
+    padding: 1.5rem 1.5rem 0;
+    font-size: 1.2rem;
+}
+
+/* Descrição do projeto */
+.portfolio-item p {
+    color: var(--color-text-muted);
+    padding: 0.5rem 1.5rem;
+    flex-grow: 1;
+    font-size: 0.95rem;
+}
+
+/* Botão "Visitar Site" dentro do card de portfólio */
+.portfolio-link {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--bento-radius);
+    text-decoration: none;
+    margin: 1rem 1.5rem 1.5rem;
+    transition: all var(--transition-default);
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Ao passar o mouse, o botão escurece e sobe levemente */
+.portfolio-link:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+/* ===========================================================
+   Portfólio — Miniatura com Iframe
+   -----------------------------------------------------------
+   Alguns cards do portfólio mostram uma prévia real do site
+   usando um iframe (janela embutida). O iframe é renderizado
+   em 400% do tamanho e depois reduzido a 25% com transform,
+   criando uma miniatura "screenshot" do site real.
+   =========================================================== */
+
+/* Container da miniatura — esconde o conteúdo que ultrapassa */
+.portfolio-image-iframe {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Iframe da miniatura — renderizado 4x maior e depois
+   reduzido para caber na área de 200px de altura.
+   O "pointer-events: none" impede cliques dentro do iframe. */
+.portfolio-iframe-thumbnail {
+    width: 400%;
+    height: 400%;
+    border: none;
+    transform: scale(0.25);
+    transform-origin: top left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+/* ===========================================================
+   Cards — Itens de Serviço (com filtro por categoria)
+   -----------------------------------------------------------
+   Cards usados na aba "Serviços de Software" da página de
+   Serviços. Podem ser filtrados por categoria: "Próprio"
+   ou "Parceiro". Cada card tem uma barra colorida no topo.
+   =========================================================== */
+
+/* Grade de serviços — 2 colunas lado a lado */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--bento-gap);
+}
+
+/* Card individual de serviço — fundo transparente com borda.
+   O "overflow: hidden" é necessário para a barra colorida
+   no topo não ultrapassar os cantos arredondados. */
+.service-item {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--bento-radius);
+    padding: 3rem;
+    text-align: center;
+    transition: all var(--transition-default);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Barra decorativa no topo do card — linha fina com gradiente
+   roxo que serve como indicador visual de destaque */
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    border-radius: var(--bento-radius) var(--bento-radius) 0 0;
+}
+
+/* Ao passar o mouse, o card sobe e ganha fundo */
+.service-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-border-hover);
+    background: var(--color-surface);
+}
+
+/* Ícone emoji grande no topo do card de serviço */
+.service-item-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* Título do serviço */
+.service-item h3 {
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Descrição do serviço */
+.service-item p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* Badge (etiqueta) indicando se o serviço é "Próprio" ou "Parceiro" */
+.service-badge {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.35rem 1rem;
+    border-radius: var(--bento-radius);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Botão de contratação/link no card de serviço */
+.service-link {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--bento-radius);
+    text-decoration: none;
+    transition: all var(--transition-default);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.service-link:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+/* ===========================================================
+   Cards — Ferramentas Online
+   -----------------------------------------------------------
+   Cards que apresentam as ferramentas online disponíveis
+   (conversor de imagens, gerador de QR Code, etc.).
+   Cada card tem ícone, título, descrição e botão de ação.
+   =========================================================== */
+
+/* Grade de ferramentas — 2 colunas */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--bento-gap);
+    margin-top: 2rem;
+}
+
+/* Card individual de ferramenta */
+.tool-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--bento-radius);
+    padding: 2.5rem;
+    text-align: center;
+    transition: all var(--transition-default);
+}
+
+/* Ao passar o mouse, o card sobe e fica mais claro */
+.tool-item:hover {
+    border-color: var(--color-border-hover);
+    transform: translateY(-4px);
+    background: var(--color-surface-hover);
+}
+
+/* Ícone emoji da ferramenta */
+.tool-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* Título da ferramenta */
+.tool-item h3 {
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Descrição da ferramenta */
+.tool-item p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Botão "Usar Ferramenta" dentro do card */
+.tool-link {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--bento-radius);
+    text-decoration: none;
+    transition: all var(--transition-default);
+    font-weight: 600;
+}
+
+/* Ao passar o mouse, o botão escurece e sobe levemente */
+.tool-link:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+/* ===========================================================
+   Cards — Consultoria e Suporte de TI
+   -----------------------------------------------------------
+   Seção especial da página de Serviços que apresenta o
+   serviço de consultoria. Diferente dos outros cards, é
+   um bloco único grande com ícone, texto descritivo,
+   lista de recursos e botão de contato.
+
+   RENOMEADO: "consultoria" → "consulting" para manter
+   o padrão de nomes em inglês.
+   =========================================================== */
+
+/* Container principal da seção de consultoria */
+.consulting-content {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--bento-radius);
+    padding: 3rem;
+    text-align: center;
+}
+
+/* Ícone grande no topo da seção */
+.consulting-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+/* Ícone SVG de consultoria (quando usado como imagem) */
+.consulting-icon img {
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+}
+
+/* Título da seção de consultoria */
+.consulting-content h2 {
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/* Primeiro parágrafo — descrição principal do serviço */
+.consulting-content>p:first-of-type {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Lista de recursos/vantagens — exibida em grade responsiva.
+   Cada item é um "feature" (recurso) com ícone de check (✓). */
+.consulting-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--bento-gap);
+    margin: 2rem 0;
+    list-style: none;
+}
+
+/* Card de cada recurso/vantagem */
+.feature {
+    background-color: var(--color-surface-hover);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+}
+
+/* Ícone de check (✓) em cada recurso — cor roxa para destaque */
+.feature-icon {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+/* Texto descritivo do recurso */
+.feature p {
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* Subtítulo abaixo da lista de recursos — convite para contato */
+.consulting-subtitle {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    margin: 2rem 0;
+}
+
+/* ===========================================================
+   Layout dos Controles de Filtro
+   -----------------------------------------------------------
+   Container que organiza os botões de filtro ("Todos",
+   "Próprios", "Parceiros") em linha centralizada.
+   =========================================================== */
+
+.filter-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+/* ===========================================================
+   Responsivo — Cards e Grades (telas menores que 768px)
+   -----------------------------------------------------------
+   Em celulares, todas as grades mudam de múltiplas colunas
+   para uma coluna única, garantindo boa leitura.
+   =========================================================== */
+
+@media (max-width: 768px) {
+    .portfolio-grid,
+    .services-grid,
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .consulting-content {
+        padding: 2rem;
+    }
+}

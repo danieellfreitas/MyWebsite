@@ -1,0 +1,79 @@
+/* ===========================================================
+   Variáveis Globais do Sistema de Design
+   -----------------------------------------------------------
+   Variáveis CSS são como "apelidos" para valores que usamos
+   repetidamente no site (cores, espaçamentos, etc.).
+
+   A grande vantagem: se quisermos mudar a cor principal do
+   site inteiro, basta alterar aqui — e todas as páginas
+   atualizam automaticamente.
+
+   Todas as variáveis ficam dentro do ":root", que é o
+   elemento raiz do documento (o <html>), garantindo que
+   estejam disponíveis em qualquer lugar do CSS.
+   =========================================================== */
+
+:root {
+    /* -------------------------------------------------------
+       Cores de Fundo (Tema Escuro Moderno)
+       -------------------------------------------------------
+       Usamos tons da escala "Zinc" para criar profundidade:
+       - color-bg: o fundo mais escuro de toda a página
+       - color-surface: usado em cards e áreas elevadas
+       - color-surface-hover: tom ao passar o mouse sobre um card
+       - color-surface-elevated: menus suspensos e modais
+       ------------------------------------------------------- */
+    --color-bg: #161619;
+    --color-surface: #18181b;
+    --color-surface-hover: #27272a;
+    --color-surface-elevated: #27272a;
+
+    /* -------------------------------------------------------
+       Paleta de Cores Principal (Roxo/Violeta Moderno)
+       -------------------------------------------------------
+       Essas são as cores de "destaque" do site:
+       - color-primary: roxo principal, usado em botões e links
+       - color-secondary: roxo mais escuro, para gradientes
+       - color-accent: roxo mais claro, para brilhos e realces
+       ------------------------------------------------------- */
+    --color-primary: #8b5cf6;
+    --color-secondary: #7c3aed;
+    --color-accent: #a78bfa;
+
+    /* -------------------------------------------------------
+       Cores de Texto
+       -------------------------------------------------------
+       - color-text: branco suave para textos principais
+       - color-text-muted: cinza para textos secundários
+       ------------------------------------------------------- */
+    --color-text: #fafafa;
+    --color-text-muted: #a1a1aa;
+
+    /* -------------------------------------------------------
+       Cores de Bordas
+       -------------------------------------------------------
+       Usamos branco com opacidade baixa para criar bordas
+       sutis que definem os limites dos cards sem chamar
+       muita atenção visual.
+       ------------------------------------------------------- */
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-hover: rgba(255, 255, 255, 0.15);
+
+    /* -------------------------------------------------------
+       Espaçamento e Arredondamento (Bento Grid)
+       -------------------------------------------------------
+       - bento-gap: espaço entre os cards do layout
+       - bento-radius: arredondamento dos cantos dos cards
+       ------------------------------------------------------- */
+    --bento-gap: 1.25rem;
+    --bento-radius: 18px;
+
+    /* -------------------------------------------------------
+       Transição Padrão
+       -------------------------------------------------------
+       Define a animação suave quando elementos mudam de
+       estado (ex: cor ao passar o mouse). A curva "cubic-bezier"
+       cria um movimento mais natural e elegante.
+       ------------------------------------------------------- */
+    --transition-default: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

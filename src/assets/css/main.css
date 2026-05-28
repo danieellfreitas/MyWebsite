@@ -1,0 +1,34 @@
+/* ===========================================================
+   Arquivo Principal de Estilos (main.css)
+   -----------------------------------------------------------
+   Este é o "ponto de entrada" de todo o CSS do site.
+   Ele não contém regras visuais — apenas importa (carrega)
+   todos os outros arquivos de estilo na ordem correta.
+
+   A ordem é importante porque o CSS funciona em cascata:
+   o que vem depois pode sobrescrever o que veio antes.
+   =========================================================== */
+
+/* 01 - Base: reseta estilos padrão do navegador, define variáveis
+   de cores/espaçamentos e configura a fonte do site */
+@import url('./01-base/reset.css');
+@import url('./01-base/variables.css');
+@import url('./01-base/typography.css');
+
+/* 02 - Layout: define a estrutura geral das páginas,
+   como o container central, o cabeçalho fixo e o rodapé */
+@import url('./02-layout/grid.css');
+@import url('./02-layout/header.css');
+@import url('./02-layout/footer.css');
+
+/* 03 - Componentes: elementos reutilizáveis que aparecem
+   em várias páginas, como botões e cards */
+@import url('./03-components/buttons.css');
+@import url('./03-components/cards.css');
+
+/* 04 - Páginas: estilos específicos de cada página do site,
+   que só se aplicam naquela página em particular */
+@import url('./04-pages/home.css');
+@import url('./04-pages/services.css');
+@import url('./04-pages/contact.css');
+@import url('./04-pages/about.css');

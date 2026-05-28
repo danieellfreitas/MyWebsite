@@ -1,0 +1,29 @@
+﻿
+
+:root {
+    
+    --color-bg: #161619;
+    --color-surface: #18181b;
+    --color-surface-hover: #27272a;
+    --color-surface-elevated: #27272a;
+
+    
+    --color-primary: #8b5cf6;
+    --color-secondary: #7c3aed;
+    --color-accent: #a78bfa;
+
+    
+    --color-text: #fafafa;
+    --color-text-muted: #a1a1aa;
+
+    
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-hover: rgba(255, 255, 255, 0.15);
+
+    
+    --bento-gap: 1.25rem;
+    --bento-radius: 18px;
+
+    
+    --transition-default: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

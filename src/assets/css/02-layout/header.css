@@ -1,0 +1,169 @@
+/* ===========================================================
+   Cabeçalho do Site / Menu de Navegação / Menu Suspenso
+   -----------------------------------------------------------
+   O cabeçalho fica fixo no topo da tela (sticky) e contém
+   o logotipo do site e o menu de navegação com links para
+   as páginas. Também inclui o menu suspenso (dropdown) que
+   aparece ao passar o mouse sobre "Serviços".
+   =========================================================== */
+
+/* Barra do cabeçalho — fixa no topo da tela.
+   O "position: sticky" faz o cabeçalho acompanhar a rolagem.
+   O "z-index: 100" garante que ele fique ACIMA de todo conteúdo. */
+body>header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    /* Mantém a altura total em 92px com logo de 52px (52px + 20px padding superior + 20px padding inferior) */
+    padding: 1.25rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Container interno do cabeçalho — posiciona o logo à esquerda
+   e o menu à direita usando flexbox (layout lado a lado).
+   A largura máxima de 1200px é menor que o container geral
+   para manter o cabeçalho mais compacto e centralizado. */
+body>header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+/* Remove o sublinhado do link que envolve o logotipo */
+.logo a {
+    text-decoration: none;
+}
+
+/* Imagem do logotipo — altura ajustada para melhor proporção com o restante da página.
+   O "width: auto" mantém a proporção original da imagem. */
+.site-logo {
+    /* Ligeiramente menor para um visual mais discreto e equilibrado (quase imperceptível) */
+    max-height: 52px;
+    width: auto;
+    display: block;
+}
+
+/* Lista de links do menu — dispostos lado a lado com espaço entre eles.
+   O "list-style: none" remove as bolinhas padrão de listas. */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+/* Estilo dos links do menu — sem sublinhado, cor cinza suave.
+   A transição faz a mudança de cor ser animada suavemente. */
+nav a {
+    text-decoration: none;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color var(--transition-default);
+}
+
+/* Ao passar o mouse, o link fica com a cor branca (mais visível) */
+nav a:hover {
+    color: var(--color-text);
+}
+
+/* ===========================================================
+   Menu Suspenso (Dropdown)
+   -----------------------------------------------------------
+   O dropdown é o submenu que aparece ao passar o mouse sobre
+   o item "Serviços". Ele fica escondido por padrão (opacity: 0)
+   e aparece suavemente ao interagir com o item pai.
+   =========================================================== */
+
+/* Item pai do dropdown — precisa de "position: relative" para que
+   o submenu se posicione em relação a ele. O padding/margin negativo
+   cria uma área de hover maior, evitando que o menu feche ao
+   mover o mouse do item pai para o submenu. */
+nav .dropdown {
+    position: relative;
+    padding: 1rem 0;
+    margin: -1rem 0;
+}
+
+/* O submenu em si — posicionado logo abaixo do item pai.
+   Começa invisível (opacity: 0) e inalcançável (visibility: hidden).
+   O "transform: translateX(-50%)" centraliza o submenu abaixo do pai.
+   A sombra (box-shadow) cria profundidade visual. */
+nav ul.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 240px;
+    background: var(--color-surface-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--bento-radius);
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Ao passar o mouse no item pai, o submenu fica visível */
+nav .dropdown:hover ul.dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%);
+}
+
+/* Cada item do submenu ocupa toda a largura disponível */
+nav ul.dropdown-menu li {
+    width: 100%;
+}
+
+/* Links dentro do submenu — espaçamento interno confortável.
+   O "white-space: nowrap" impede que o texto quebre em duas linhas. */
+nav ul.dropdown-menu a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+/* Ao passar o mouse em um link do submenu, ele ganha destaque
+   com fundo diferente e cor roxa */
+nav ul.dropdown-menu a:hover {
+    background: var(--color-surface-hover);
+    color: var(--color-primary);
+}
+
+/* ===========================================================
+   Responsivo — Cabeçalho (telas menores que 768px)
+   -----------------------------------------------------------
+   Em celulares e tablets, reduz o espaçamento e o tamanho
+   do texto do menu para caber na tela menor.
+   =========================================================== */
+
+@media (max-width: 768px) {
+    body>header {
+        /* Mantém a altura total no mobile em 80px com logo de 42px (42px + 19px padding superior + 19px padding inferior) */
+        padding: 1.1875rem 0;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .site-logo {
+        /* Ligeiramente menor no mobile também para manter a proporção */
+        max-height: 42px;
+    }
+}

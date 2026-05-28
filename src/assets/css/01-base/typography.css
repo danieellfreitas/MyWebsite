@@ -1,0 +1,110 @@
+/* ===========================================================
+   Tipografia — Carregamento da Fonte Poppins
+   -----------------------------------------------------------
+   A fonte "Poppins" é carregada localmente (dos arquivos do
+   projeto, sem depender da internet). Cada @font-face abaixo
+   registra um "peso" diferente da fonte:
+
+   - 300 (Light): texto bem fininho
+   - 400 (Regular): texto normal do dia a dia
+   - 400 Italic: texto normal em itálico
+   - 500 (Medium): um pouco mais grosso que o normal
+   - 600 (SemiBold): semi-negrito, usado em subtítulos
+   - 700 (Bold): negrito, usado em títulos
+   - 800 (ExtraBold): extra-negrito, usado em títulos grandes
+
+   O "font-display: swap" faz o site mostrar o texto com uma
+   fonte temporária enquanto a Poppins carrega, evitando que
+   a tela fique em branco.
+   =========================================================== */
+
+/* Peso 300 — Light (fino) */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../Poppins/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Peso 400 — Regular (normal) */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Peso 400 — Itálico */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../Poppins/Poppins-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Peso 500 — Medium (médio) */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../Poppins/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Peso 600 — SemiBold (semi-negrito) */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../Poppins/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Peso 700 — Bold (negrito) */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../Poppins/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Peso 800 — ExtraBold (extra-negrito) */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../Poppins/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===========================================================
+   Estilos Globais de Texto
+   -----------------------------------------------------------
+   Define a fonte padrão e as cores básicas de todo o site.
+   O "overflow-x: hidden" impede que conteúdo vaze para
+   os lados e gere barra de rolagem horizontal indesejada.
+   =========================================================== */
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    overflow-x: hidden;
+}
+
+/* Efeito de texto com gradiente (degradê roxo).
+   Aplicado em palavras de destaque nos títulos do site.
+   Funciona pintando o fundo com um gradiente e depois
+   recortando esse fundo na forma das letras. */
+.text-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}

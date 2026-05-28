@@ -1,0 +1,312 @@
+/* ===========================================================
+   Página Sobre Mim — Seção Hero
+   -----------------------------------------------------------
+   Primeira seção da página "Sobre Mim" que exibe a foto
+   de perfil, nome, cargo e botão de contato. É a
+   "vitrine" profissional do site.
+   =========================================================== */
+
+/* Container do Hero — espaçamento generoso no topo */
+.about-hero {
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+}
+
+/* Foto de perfil
+   O "object-fit: contain" garante que o SVG seja exibido sem distorções ou cortes. */
+.about-profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition-default);
+}
+
+/* Ao passar o mouse, a foto aumenta levemente (zoom de 4%) */
+.about-profile-photo:hover {
+    transform: scale(1.04);
+}
+
+/* Nome do profissional — grande e em destaque */
+.about-name {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+/* Cargo/função — texto menor e mais discreto abaixo do nome */
+.about-role {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+/* ===========================================================
+   Página Sobre Mim — Seção Biografia
+   -----------------------------------------------------------
+   Texto descritivo sobre a trajetória profissional.
+   Centralizado em uma coluna de 800px para boa leitura.
+   =========================================================== */
+
+/* Container da seção bio — separada por borda superior */
+.about-bio {
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Conteúdo da bio — largura máxima para manter texto legível */
+.about-bio-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Título da seção "Sobre Mim" */
+.about-bio-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+/* Parágrafos da biografia — espaçamento entre linhas generoso
+   (1.8) para facilitar a leitura de textos longos */
+.about-bio-text {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* ===========================================================
+   Página Sobre Mim — Seção de Tecnologias
+   -----------------------------------------------------------
+   Exibe os ícones das tecnologias que o profissional domina
+   (HTML, CSS, JavaScript, Python, etc.) em cards pequenos.
+   =========================================================== */
+
+/* Container da seção — separada por borda superior */
+.about-tech {
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Conteúdo centralizado */
+.about-tech-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Título da seção "Tecnologias & Ferramentas" */
+.about-tech-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+}
+
+/* Grade de tecnologias — flexbox que alinha os cards de
+   tecnologia lado a lado, quebrando em nova linha quando
+   necessário (flex-wrap: wrap). */
+.tech-stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Card individual de tecnologia — caixa pequena com
+   ícone SVG e nome da tecnologia empilhados verticalmente */
+.tech-stack-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--bento-radius);
+    transition: all var(--transition-default);
+    min-width: 100px;
+}
+
+/* Ao passar o mouse, o card sobe e fica mais claro */
+.tech-stack-item:hover {
+    border-color: var(--color-border-hover);
+    transform: translateY(-4px);
+    background: var(--color-surface-hover);
+}
+
+/* Container do ícone SVG da tecnologia */
+.tech-stack-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tamanho do ícone SVG */
+.tech-stack-icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+/* Nome da tecnologia abaixo do ícone */
+.tech-stack-item span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+}
+
+/* ===========================================================
+   Página Sobre Mim — Botões de Ação Finais
+   -----------------------------------------------------------
+   Botões "Entrar em Contato" e "Ver Serviços" que ficam
+   no final da página, convidando o visitante a continuar
+   navegando pelo site.
+   =========================================================== */
+
+.about-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 2rem 4rem;
+}
+
+/* ===========================================================
+   Página Inicial — Resumo "Sobre Mim"
+   -----------------------------------------------------------
+   Versão compacta da seção "Sobre Mim" que aparece na
+   página inicial. Exibe foto, nome, breve descrição e
+   link "Saiba mais sobre mim" que leva à página completa.
+   =========================================================== */
+
+/* Container da seção de resumo */
+.about-summary {
+    padding: 5rem 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Layout do resumo — foto à esquerda e texto à direita,
+   usando flexbox. Largura máxima de 1000px para manter
+   proporção agradável. */
+.about-summary-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Foto de perfil no resumo — menor que na página completa (140px).
+   O "flex-shrink: 0" impede que a foto encolha quando o
+   espaço fica apertado — ela mantém seu tamanho fixo. */
+.about-summary-photo {
+    width: 240px;
+    height: 240px;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform var(--transition-default);
+}
+
+/* Zoom sutil ao passar o mouse na foto */
+.about-summary-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Coluna de texto do resumo — ocupa todo o espaço restante */
+.about-summary-info {
+    flex: 1;
+}
+
+/* Nome no resumo */
+.about-summary-info h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+/* Descrição resumida */
+.about-summary-info p {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* Link "Saiba mais sobre mim" — texto roxo com seta à direita */
+.about-summary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all var(--transition-default);
+}
+
+/* Ao passar o mouse, a cor muda para o tom de realce (mais claro) */
+.about-summary-link:hover {
+    color: var(--color-accent);
+}
+
+/* Seta do link "Saiba mais" — tem animação de transição */
+.about-summary-link .arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Ao passar o mouse, a seta se move 5px para a direita */
+.about-summary-link:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* ===========================================================
+   Responsivo — Página Sobre Mim (telas menores que 768px)
+   -----------------------------------------------------------
+   Em celulares, reduz tamanhos e muda layouts para melhor
+   aproveitamento do espaço vertical.
+   =========================================================== */
+
+@media (max-width: 768px) {
+    /* Nome menor em celulares */
+    .about-name {
+        font-size: 2rem;
+    }
+
+    /* Foto de perfil menor */
+    .about-profile-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    /* Títulos das seções menores */
+    .about-bio-title,
+    .about-tech-title {
+        font-size: 1.6rem;
+    }
+
+    /* Resumo "Sobre Mim" muda para layout vertical (empilhado)
+       com texto centralizado, em vez de lado a lado */
+    .about-summary-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Foto do resumo menor */
+    .about-summary-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Botões de ação empilhados verticalmente */
+    .about-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}

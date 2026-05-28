@@ -1,0 +1,111 @@
+/* ===========================================================
+   Página de Contato
+   -----------------------------------------------------------
+   Página dedicada para o visitante entrar em contato.
+   Contém um card centralizado com título, texto descritivo
+   e botões para WhatsApp e E-mail.
+
+   Uma barra decorativa roxa no topo do card dá um toque
+   visual premium.
+   =========================================================== */
+
+/* Card principal de contato — centralizado na página,
+   com fundo elevado e barra roxa decorativa no topo.
+   O "overflow: hidden" é necessário para a barra decorativa
+   não ultrapassar os cantos arredondados. */
+.contact-sales-container {
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 4rem 3rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--bento-radius);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Barra decorativa no topo do card — gradiente roxo de 4px
+   que serve como indicador visual elegante */
+.contact-sales-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+/* Título principal da página de contato — grande e impactante */
+.contact-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+/* Subtítulo — texto que convida o visitante a entrar em contato.
+   Largura máxima de 600px para manter boa leitura. */
+.contact-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Container dos botões de contato — empilhados verticalmente */
+.contact-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+/* Cada botão de contato (WhatsApp, E-mail) — ícone à esquerda
+   do texto, fundo escuro, centralizado na página.
+   A largura máxima de 300px garante tamanho uniforme. */
+.contact-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--color-surface-hover);
+    color: var(--color-text);
+    padding: 1rem 2rem;
+    border-radius: var(--bento-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-default);
+    border: 1px solid var(--color-border);
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Ao passar o mouse, o fundo ganha um tom roxo semitransparente */
+.contact-action-btn:hover {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: var(--color-border-hover);
+}
+
+/* ===========================================================
+   Responsivo — Página de Contato (telas menores que 768px)
+   -----------------------------------------------------------
+   Em celulares, reduz o tamanho do título e o padding do card.
+   =========================================================== */
+
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 2.2rem;
+    }
+
+    .contact-sales-container {
+        padding: 3rem 1.5rem;
+    }
+}

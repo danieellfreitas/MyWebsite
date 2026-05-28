@@ -1,0 +1,56 @@
+/* ===========================================================
+   Grid / Container / Layout Global
+   -----------------------------------------------------------
+   Define a estrutura principal que organiza o conteúdo do
+   site na tela. O "container" é como uma caixa invisível
+   que centraliza o conteúdo e limita sua largura máxima,
+   impedindo que o texto fique espalhado em telas muito largas.
+   =========================================================== */
+
+/* Container principal — centraliza o conteúdo horizontalmente.
+   A largura máxima de 1600px garante boa leitura em monitores grandes.
+   O "margin: 0 auto" centraliza a caixa na tela. */
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Remove o espaçamento padrão da área de conteúdo principal */
+main {
+    padding: 0;
+}
+
+/* Espaçamento vertical padrão entre as seções do site
+   (ex: seção de serviços, depoimentos, etc.) */
+section {
+    padding: 3rem 0;
+}
+
+/* ===========================================================
+   Cabeçalho de Seção Reutilizável
+   -----------------------------------------------------------
+   Usado como título e subtítulo de cada seção da página.
+   Centraliza o texto e mantém um espaçamento consistente.
+   =========================================================== */
+
+.section-header {
+    text-align: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+/* Título da seção — tamanho grande e bem destacado */
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+/* Subtítulo da seção — cor mais suave para não competir com o título */
+.section-header p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+}

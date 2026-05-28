@@ -1,0 +1,125 @@
+﻿
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: var(--bento-radius);
+    cursor: pointer;
+    transition: all var(--transition-default);
+    text-decoration: none;
+    border: none;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #fff;
+}
+
+.primary-btn:hover {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.secondary-btn:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-border-hover);
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-surface);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--bento-radius);
+    cursor: pointer;
+    transition: all var(--transition-default);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    transition: filter var(--transition-default);
+}
+
+.nav-btn:hover {
+    border-color: var(--color-border-hover);
+    color: var(--color-text);
+    background-color: var(--color-surface-hover);
+}
+
+.nav-btn:hover .nav-icon,
+.nav-btn.active .nav-icon {
+    filter: brightness(0) invert(1);
+}
+
+.nav-btn.active {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
+
+.filter-btn {
+    background-color: var(--color-surface);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--bento-radius);
+    cursor: pointer;
+    transition: all var(--transition-default);
+    font-weight: 600;
+}
+
+.filter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.learn-more {
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+.learn-more .arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-icon-img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+}

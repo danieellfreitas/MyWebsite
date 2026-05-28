@@ -1,0 +1,113 @@
+/* ===========================================================
+   Rodapé do Site (Footer)
+   -----------------------------------------------------------
+   O rodapé fica no final de todas as páginas e contém
+   informações institucionais, dados de contato e links
+   para as redes sociais. É separado do conteúdo principal
+   por uma borda superior sutil.
+   =========================================================== */
+
+/* Área principal do rodapé — fundo elevado para se diferenciar
+   do conteúdo da página, com espaçamento generoso */
+footer {
+    background-color: var(--color-surface);
+    color: var(--color-text-muted);
+    padding: 4rem 1rem 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Layout do conteúdo do rodapé — usa CSS Grid para distribuir
+   as colunas (sobre, contato, redes sociais) de forma automática.
+   O "auto-fit" faz as colunas se ajustarem ao espaço disponível. */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Título de cada seção do rodapé (ex: "Contato", "Redes Sociais") */
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+/* Parágrafos dentro de cada seção do rodapé */
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+
+/* Links do rodapé — sem sublinhado, com transição suave de cor */
+footer a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--transition-default);
+}
+
+/* Ao passar o mouse, os links ficam roxos (cor principal do site) */
+footer a:hover {
+    color: var(--color-primary);
+}
+
+/* Linha inferior do rodapé — contém o texto de copyright.
+   Separada por uma borda superior fina. */
+.footer-bottom {
+    border-top: 1px solid var(--color-border);
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--color-text-muted);
+}
+
+/* ===========================================================
+   Ícones de Redes Sociais
+   -----------------------------------------------------------
+   Botões redondos com os ícones das redes sociais.
+   Cada ícone é um link que leva à rede social correspondente.
+   =========================================================== */
+
+/* Container flexível que alinha os ícones lado a lado */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Cada botão de rede social — círculo de 40x40px com borda sutil.
+   O display flex centraliza o ícone dentro do círculo. */
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-surface-hover);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all var(--transition-default);
+}
+
+/* Ao passar o mouse, o ícone ganha fundo gradiente roxo,
+   sobe levemente (-3px) e a borda desaparece */
+.social-icon:hover {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    transform: translateY(-3px);
+    border-color: transparent;
+}
+
+/* O ícone interno SVG muda de cor para branco no hover, garantindo excelente contraste */
+.social-icon:hover .icon-img {
+    filter: brightness(0) invert(1);
+}
+
+/* Tamanho padrão dos ícones SVG dentro dos botões sociais */
+.icon-img {
+    width: 22px;
+    height: 22px;
+    display: block;
+}

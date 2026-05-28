@@ -1,0 +1,138 @@
+/* ===========================================================
+   Página de Serviços — Título da Página
+   -----------------------------------------------------------
+   Título e subtítulo que aparecem no topo da página de
+   Serviços, acima das abas de navegação.
+   =========================================================== */
+
+/* Container do título — fundo transparente, texto centralizado */
+.page-title {
+    background: transparent;
+    color: var(--color-text);
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 0;
+    margin: 0;
+}
+
+/* Título principal da página */
+.page-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Subtítulo descritivo */
+.page-title p {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+}
+
+/* ===========================================================
+   Página de Serviços — Barra de Navegação por Abas
+   -----------------------------------------------------------
+   Barra horizontal com botões para alternar entre as seções:
+   Galeria de Sites, Serviços, Ferramentas e Consultoria.
+   Funciona em conjunto com o JavaScript (services.js) que
+   controla qual seção está visível.
+   =========================================================== */
+
+/* Container da barra de navegação — borda inferior para
+   separar visualmente das seções de conteúdo abaixo */
+.service-nav {
+    padding: 2rem 0;
+    background-color: transparent;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Alinhamento dos botões — centralizados e com quebra de
+   linha automática quando não cabem lado a lado */
+.service-nav-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===========================================================
+   Página de Serviços — Seções de Conteúdo (Abas)
+   -----------------------------------------------------------
+   Cada "service-section" representa o conteúdo de uma aba.
+   Apenas a aba com a classe "active" fica visível.
+   As demais ficam escondidas com "display: none".
+
+   Quando uma aba é ativada, uma animação de "fade in"
+   (aparecer gradualmente) é executada.
+   =========================================================== */
+
+/* Seção de conteúdo — escondida por padrão */
+.service-section {
+    display: none;
+    padding: 4rem 2rem;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Seção ativa — a que está sendo exibida no momento */
+.service-section.active {
+    display: block;
+}
+
+/* Animação de entrada — a seção aparece gradualmente,
+   subindo 10px até a posição final */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título de cada seção de conteúdo */
+.service-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Subtítulo da seção — texto descritivo abaixo do título */
+.section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+/* ===========================================================
+   Responsivo — Página de Serviços (telas menores que 768px)
+   -----------------------------------------------------------
+   Em celulares, reduz tamanhos de texto e empilha os botões
+   de navegação verticalmente.
+   =========================================================== */
+
+@media (max-width: 768px) {
+    .page-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-title p {
+        font-size: 1rem;
+    }
+
+    /* Botões de aba empilhados verticalmente */
+    .service-nav-buttons {
+        flex-direction: column;
+    }
+
+    /* Cada botão ocupa toda a largura */
+    .nav-btn {
+        width: 100%;
+    }
+
+    .service-section h2 {
+        font-size: 1.8rem;
+    }
+}

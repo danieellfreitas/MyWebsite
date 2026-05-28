@@ -1,0 +1,178 @@
+/* ===========================================================
+   Página Inicial — Seção Hero (Banner Principal)
+   -----------------------------------------------------------
+   A seção "Hero" é a primeira coisa que o visitante vê ao
+   entrar no site. Ocupa uma área grande no topo e contém
+   o título principal, subtítulo e botões de ação.
+
+   Uma animação suave faz o conteúdo "subir e aparecer"
+   quando a página carrega, criando uma impressão premium.
+   =========================================================== */
+
+/* Container da seção Hero — espaçamento generoso para destaque.
+   O "overflow: hidden" impede que a animação inicial vaze
+   para fora dos limites da seção. */
+.hero {
+    position: relative;
+    padding: 8rem 2rem 6rem;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Conteúdo do Hero — limitado a 800px de largura para
+   manter o texto legível. A animação "slideUpFade" é
+   aplicada aqui (definida logo abaixo). */
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animação de entrada — o conteúdo começa transparente e
+   40px abaixo da posição final, depois sobe suavemente
+   até ficar totalmente visível na posição correta. */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Badge (etiqueta) no topo do Hero — pequeno texto
+   como "Inovação & Tecnologia" que contextualiza o título.
+   Letras maiúsculas e espaçamento entre caracteres para
+   dar um visual moderno e profissional. */
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--bento-radius);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Título principal do Hero — texto grande e impactante.
+   O "letter-spacing: -1px" aproxima levemente as letras,
+   um truque tipográfico que melhora a leitura em fontes grandes. */
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+/* Subtítulo — texto descritivo abaixo do título principal.
+   Cor mais suave e largura máxima de 600px para não
+   ficar linhas muito longas (melhora a leitura). */
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botões de ação do Hero — dispostos lado a lado e centralizados.
+   O "flex-wrap: wrap" faz os botões irem para a linha de baixo
+   se não couberem lado a lado (em telas pequenas). */
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===========================================================
+   Página Inicial — Seção de Serviços (Grade Bento 2x2)
+   -----------------------------------------------------------
+   Mostra os 4 cards principais de serviço em uma grade 2x2.
+   Separada da seção Hero por uma borda superior fina.
+   =========================================================== */
+
+/* Container da seção de serviços */
+.services {
+    padding: 5rem 2rem;
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Grade dos cards de serviço — fixa em 2 colunas */
+.services .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--bento-gap);
+}
+
+/* ===========================================================
+   Página Inicial — Depoimentos / Avaliações do Google
+   -----------------------------------------------------------
+   Seção reservada para exibir avaliações de clientes do
+   Google. Atualmente mostra um placeholder (espaço reservado)
+   até que o widget real seja integrado.
+   =========================================================== */
+
+/* Container da seção de depoimentos */
+.testimonials {
+    padding: 5rem 2rem;
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Área onde o widget de avaliações do Google será inserido.
+   Por enquanto, é um retângulo tracejado com texto centralizado. */
+#google-reviews-container {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--bento-radius);
+    padding: 2rem;
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+/* Botão "Ver Mais Avaliações" — centralizado abaixo do widget */
+.reviews-action {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* ===========================================================
+   Responsivo — Página Inicial (telas menores que 768px)
+   -----------------------------------------------------------
+   Em celulares, reduz o tamanho dos títulos e muda a grade
+   de serviços de 2 colunas para 1 coluna.
+   =========================================================== */
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .services .services-grid {
+        grid-template-columns: 1fr;
+    }
+}

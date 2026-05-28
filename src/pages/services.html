@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Daniel Tecnologia - Serviços de TI detalhados. Consultoria, Desenvolvimento de Software e Suporte Técnico.">
+    <title>Serviços - Daniel Tecnologia</title>
+    <!-- Carrega o arquivo principal de estilos -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/BrandIcon.svg">
+</head>
+
+<body>
+    <!-- ===================================================
+         Cabeçalho do Site
+         Logotipo e menu de navegação com submenu suspenso.
+         =================================================== -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <!-- Logotipo do site (Tema escuro padrão) -->
+                    <!-- Forced dark theme logo, removed <picture> with light/dark queries -->
+                    <img src="../assets/img/logoType.svg" alt="Daniel Tecnologia Logo" class="site-logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Serviços</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html#gallery">Galeria de Sites</a></li>
+                            <li><a href="services.html#services">Serviços de Software</a></li>
+                            <li><a href="services.html#tools">Ferramentas Online</a></li>
+                            <li><a href="services.html#consulting">Consultoria em TI</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">Sobre</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===================================================
+         Conteúdo Principal da Página de Serviços
+         Organizado em abas: Galeria, Serviços, Ferramentas
+         e Consultoria. O JavaScript (services.js) controla
+         qual aba está visível.
+         =================================================== -->
+    <main>
+        <!-- Título da Página -->
+        <section class="page-title">
+            <div class="container">
+                <h1>Nossos Serviços</h1>
+                <p>Explore nossas soluções especializadas de TI</p>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             Barra de Navegação por Abas
+             Botões que alternam entre as seções de conteúdo.
+             Cada botão possui um atributo "data-tab" que indica
+             qual seção ele controla.
+             =================================================== -->
+        <section class="service-nav">
+            <div class="container">
+                <nav class="service-nav-buttons" aria-label="Navegação de Serviços">
+                    <button class="nav-btn active" data-tab="gallery"><img src="../assets/img/websiteGallery.svg" alt=""
+                            class="nav-icon"> Galeria de Sites</button>
+                    <button class="nav-btn" data-tab="services"><img src="../assets/img/services.svg" alt=""
+                            class="nav-icon"> Serviços</button>
+                    <button class="nav-btn" data-tab="tools"><img src="../assets/img/tools.svg" alt="" class="nav-icon">
+                        Ferramentas</button>
+                    <button class="nav-btn" data-tab="consulting"><img src="../assets/img/support.svg" alt=""
+                            class="nav-icon"> Consultoria</button>
+                </nav>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             Aba 1: Galeria de Sites (Portfólio)
+             Mostra os projetos web desenvolvidos em cards com
+             imagem de preview, título, descrição e botão.
+             =================================================== -->
+        <section class="service-section active" id="gallery">
+            <div class="container">
+                <h2>Galeria de Sites</h2>
+                <p class="section-subtitle">Portfólio de projetos web desenvolvidos com qualidade e inovação</p>
+
+                <div class="portfolio-grid">
+
+                    <!-- Card de projeto: Guedes Literária (com preview real via iframe) -->
+                    <article class="portfolio-item">
+                        <div class="portfolio-image portfolio-image-iframe">
+                            <!-- Iframe que carrega uma miniatura real do site -->
+                            <iframe src="https://www.guedesliteraria.com/" class="portfolio-iframe-thumbnail"
+                                loading="lazy" title="Miniatura Guedes Literária" scrolling="no"></iframe>
+                        </div>
+                        <h3>Guedes Literária</h3>
+                        <p>Site de Gráfica especializada em livros e materiais educacionais.</p>
+                        <a href="https://www.guedesliteraria.com/" class="portfolio-link" target="_blank">Visitar
+                            Site</a>
+                    </article>
+
+                    <!-- Card de projeto: E-commerce -->
+                    <article class="portfolio-item">
+                        <div class="portfolio-image"></div>
+                        <h3>E-commerce Moderno</h3>
+                        <p>Plataforma de vendas online com carrinho inteligente e pagamentos integrados.</p>
+                        <a href="#" class="portfolio-link" target="_blank">Visitar Site</a>
+                    </article>
+
+                    <!-- Card de projeto: Gestão de Projetos -->
+                    <article class="portfolio-item">
+                        <div class="portfolio-image"></div>
+                        <h3>App Gestão de Projetos</h3>
+                        <p>Aplicação web para gerenciar projetos, tarefas e equipes em tempo real.</p>
+                        <a href="#" class="portfolio-link" target="_blank">Visitar Site</a>
+                    </article>
+
+                    <!-- Card de projeto: Dashboard -->
+                    <article class="portfolio-item">
+                        <div class="portfolio-image"></div>
+                        <h3>Dashboard Analítico</h3>
+                        <p>Painel de controle com gráficos dinâmicos e análise de dados em tempo real.</p>
+                        <a href="#" class="portfolio-link" target="_blank">Visitar Site</a>
+                    </article>
+
+                    <!-- Card de projeto: Portfólio Criativo -->
+                    <article class="portfolio-item">
+                        <div class="portfolio-image"></div>
+                        <h3>Portfólio Criativo</h3>
+                        <p>Site portfólio responsivo com galeria de projetos e integração com redes sociais.</p>
+                        <a href="#" class="portfolio-link" target="_blank">Visitar Site</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             Aba 2: Serviços de Software (com filtros)
+             Cards de serviço que podem ser filtrados por
+             categoria usando os botões "Todos", "Próprios"
+             e "Parceiros". Cada card possui um atributo
+             "data-category" usado pelo JavaScript para filtragem.
+             =================================================== -->
+        <section class="service-section" id="services">
+            <div class="container">
+                <h2>Serviços de Software</h2>
+                <p class="section-subtitle">Soluções de software próprias e em parceria</p>
+
+                <!-- Botões de filtro — o atributo "data-filter" define
+                     qual categoria cada botão filtra -->
+                <nav class="filter-controls" aria-label="Filtros de Serviços">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="own">Próprios</button>
+                    <button class="filter-btn" data-filter="partners">Parceiros</button>
+                </nav>
+
+                <div class="services-grid">
+
+                    <!-- Card de serviço parceiro: Infraestrutura em Nuvem -->
+                    <article class="service-item" data-category="partners">
+                        <h3>Hospedagem &amp; Criador de Sites</h3>
+                        <p>Hospedagem de Sites, Cloud, VPS e para Agências, além de Criador de Sites &amp; E-mails
+                            Profissionais potencializados com IA em parceria com a Hostinger.</p>
+                        <span class="service-badge">Parceiro</span>
+                        <div>
+                            <a href="https://www.hostinger.com/br?REFERRALCODE=KDGDANIEE40W" target="_blank"
+                                rel="noopener noreferrer" class="service-link">Contratar com Desconto de 20%</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             Aba 3: Ferramentas Online
+             Utilitários gratuitos disponíveis para uso no site.
+             =================================================== -->
+        <section class="service-section" id="tools">
+            <div class="container">
+                <h2>Ferramentas Online</h2>
+                <p class="section-subtitle">Conversores, geradores e utilitários para facilitar suas tarefas</p>
+
+                <div class="tools-grid">
+                    <!-- Ferramenta: Conversor de Imagens -->
+                    <article class="tool-item">
+                        <h3>Conversor de Imagens</h3>
+                        <p>Converta imagens entre diferentes formatos rapidamente online.</p>
+                        <a href="#" class="tool-link">Usar Ferramenta</a>
+                    </article>
+
+                    <!-- Ferramenta: Gerador de QR Code -->
+                    <article class="tool-item">
+                        <h3>Gerador de QR Code</h3>
+                        <p>Crie QR codes personalizados para URLs, textos e contatos.</p>
+                        <a href="#" class="tool-link">Usar Ferramenta</a>
+                    </article>
+
+                    <!-- Ferramenta: Compressor de Imagens -->
+                    <article class="tool-item">
+                        <h3>Compressor de Imagens</h3>
+                        <p>Comprima imagens mantendo qualidade visual otimizada.</p>
+                        <a href="#" class="tool-link">Usar Ferramenta</a>
+                    </article>
+
+                    <!-- Ferramenta: Gerador de Senhas -->
+                    <article class="tool-item">
+                        <h3>Gerador de Senhas</h3>
+                        <p>Gere senhas seguras e personalizadas com diferentes critérios.</p>
+                        <a href="#" class="tool-link">Usar Ferramenta</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             Aba 4: Consultoria e Suporte de TI
+             Seção dedicada ao serviço de consultoria, com
+             lista de recursos, texto descritivo e botão
+             de contato.
+
+             Classes renomeadas: "consultoria" → "consulting"
+             =================================================== -->
+        <section class="service-section" id="consulting">
+            <div class="container">
+                <article class="consulting-content">
+                    <div class="consulting-icon"><img src="../assets/img/support.svg"
+                            alt="Ícone de consultoria e suporte"></div>
+                    <h2>Consultoria e Suporte de TI</h2>
+                    <p>Equipe especializada disponível para resolver problemas e manter seus sistemas funcionando de
+                        forma otimizada.</p>
+
+                    <!-- Lista de recursos/vantagens do serviço -->
+                    <ul class="consulting-features">
+                        <li class="feature">
+                            <span class="feature-icon">✓</span>
+                            <p>Análise estratégica de infraestrutura</p>
+                        </li>
+                        <li class="feature">
+                            <span class="feature-icon">✓</span>
+                            <p>Planos de suporte flexíveis</p>
+                        </li>
+                        <li class="feature">
+                            <span class="feature-icon">✓</span>
+                            <p>Suporte 24/7 para operações críticas</p>
+                        </li>
+                        <li class="feature">
+                            <span class="feature-icon">✓</span>
+                            <p>Monitoramento proativo de sistemas</p>
+                        </li>
+                    </ul>
+
+                    <p class="consulting-subtitle">Para uma avaliação personalizada de suas necessidades, entre em
+                        contato conosco!</p>
+                    <a href="contact.html" class="cta-button">Entrar em Contato</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================================================
+         Rodapé do Site
+         =================================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <section class="footer-section">
+                    <h4>Daniel Tecnologia</h4>
+                    <p>Prestador de Serviços de TI com foco em qualidade e inovação.</p>
+                </section>
+                <section class="footer-section">
+                    <h4>Contato</h4>
+                    <p>Email: contato@danieellfreitas.com</p>
+                    <p>Telefone: 62 99678-5384</p>
+                    <p>CNPJ: 66.848.716/0001-51</p>
+                </section>
+                <section class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <nav class="social-icons" aria-label="Redes sociais">
+                        <a href="https://www.instagram.com/danieellfreitas/" aria-label="Instagram" class="social-icon"
+                            target="_blank" rel="noopener noreferrer"><img src="../assets/img/instagram.svg" alt=""
+                                class="icon-img"></a>
+                        <a href="https://wa.me/5562996785384?text=Ol%C3%A1%2C%20vim%20do%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20servi%C3%A7o"
+                            aria-label="WhatsApp" class="social-icon" target="_blank" rel="noopener noreferrer"><img
+                                src="../assets/img/whatsapp.svg" alt="" class="icon-img"></a>
+                        <a href="https://www.linkedin.com/in/danieellfreitas/" aria-label="LinkedIn" class="social-icon"
+                            target="_blank" rel="noopener noreferrer"><img src="../assets/img/linkedin.svg" alt=""
+                                class="icon-img"></a>
+                        <a href="https://github.com/danieellfreitas" aria-label="GitHub" class="social-icon"
+                            target="_blank" rel="noopener noreferrer"><img src="../assets/img/github.svg" alt=""
+                                class="icon-img"></a>
+                        <a href="#" aria-label="X (Twitter)" class="social-icon"><img src="../assets/img/x.svg" alt=""
+                                class="icon-img"></a>
+                    </nav>
+                </section>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Daniel Tecnologia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript que controla a navegação por abas e os filtros -->
+    <script src="../assets/js/services.js"></script>
+</body>
+
+</html>
